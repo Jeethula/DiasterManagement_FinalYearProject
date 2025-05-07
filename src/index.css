@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  background-color: #0a1a2f;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #112a4e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a3a6c;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a4a7c;
+}
+
+/* Utility classes */
+@layer components {
+  .card {
+    @apply bg-background-medium p-4 rounded-lg shadow-md mb-4;
+  }
+  
+  .card-title {
+    @apply text-lg font-semibold mb-2 text-white;
+  }
+  
+  .emergency-alert {
+    @apply bg-emergency-900 border border-emergency-500 text-white p-3 rounded-md shadow-emergency animate-pulse-emergency;
+  }
+  
+  .warning-alert {
+    @apply bg-warning-900 border border-warning-500 text-white p-3 rounded-md shadow-warning;
+  }
+  
+  .info-alert {
+    @apply bg-info-900 border border-info-500 text-white p-3 rounded-md;
+  }
+  
+  .tab-button {
+    @apply px-4 py-2 rounded-t-lg font-medium transition duration-200;
+  }
+  
+  .tab-button-active {
+    @apply bg-background-medium text-white;
+  }
+  
+  .tab-button-inactive {
+    @apply bg-background-dark text-gray-400 hover:bg-background-light hover:text-gray-200;
+  }
+  
+  .status-badge {
+    @apply text-xs font-bold px-2 py-1 rounded-full inline-flex items-center justify-center;
+  }
+
+  .status-badge-urgent {
+    @apply bg-emergency-500 text-white;
+  }
+
+  .status-badge-warning {
+    @apply bg-warning-500 text-black;
+  }
+
+  .status-badge-info {
+    @apply bg-info-500 text-white;
+  }
+
+  .status-badge-success {
+    @apply bg-success-500 text-white;
+  }
+}
+
+/* Leaflet map custom styling */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+}
